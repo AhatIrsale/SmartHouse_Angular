@@ -1,0 +1,41 @@
+<!-- <div class="card" style="width: 18rem;">
+
+
+
+
+<img [src]="appareilAvatar" [title]="appareilName"/>
+<h3 class=""> {{appareilName}}</h3>
+<button class="btn btn-success">{{appareilStatus}}</button>
+<button class="btn btn-danger">off</button></div> -->
+
+
+
+
+
+
+
+
+  <li  [ngStyle]="{'color': getColor()}" [ngClass]="{ 'list-group-item':true,
+                                                    'list-group-item-success':appareilStatus===true,
+                                                    'list-group-item-danger':appareilStatus===false
+   }">
+    <!-- <img class="card-img-top" [src]="appareilAvatar" [title]="appareilName" alt="Card image cap"> -->
+    <h3>{{id}} -{{appareilName}}
+    <label class="btn btn-success" (click)="changestate()" *ngIf="appareilStatus==true">
+      {{appareilStatus}}
+    </label>
+
+    <label class="btn btn-danger" (click)="changestate()" *ngIf="appareilStatus==false" >
+      {{appareilStatus}}
+    </label>
+  </h3>
+
+  <input type="text" [(ngModel)]="appareilName" />
+  <input type="text" [(ngModel)]="appareilStatus" />
+
+
+  </li>
+
+
+
+
